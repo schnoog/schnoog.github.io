@@ -1,12 +1,9 @@
-new gridjs.Grid({
-  columns: ["Name", "Email", "Phone Number"],
-  data: [
-    ["John", "john@example.com", "(353) 01 222 3333"],
-    ["Mark", "mark@gmail.com", "(01) 22 888 4444"],
-    ["Eoin", "eoin@gmail.com", "0097 22 654 00033"],
-    ["Sarah", "sarahcdd@gmail.com", "+322 876 1233"],
-    ["Afshin", "afshin@mail.com", "(353) 22 87 8356"]
-  ],
+const grid = new gridjs.Grid({
+  columns: ['Name', 'URL', 'Version', 'Min Program Space', 'Min Dynamic Space'],
+  server: {
+    url: 'https://raw.githubusercontent.com/schnoog/ArduinoLibraryFootprintAnalyzer/main/php/dump.json',
+    then: data => data.data.map(lib => [lib.lib_name, lib.lib_url, lib.lib_version, lib.lib_minprogspace, lib.lib_mindynspace])
+  },
 search: true
-}).render(document.getElementById("wrapper"));
 
+}).render(document.getElementById("wrapper"));
