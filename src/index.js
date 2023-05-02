@@ -6,6 +6,7 @@ new gridjs.Grid({
     ["Eoin", "eoin@gmail.com", "0097 22 654 00033"],
     ["Sarah", "sarahcdd@gmail.com", "+322 876 1233"],
     ["Afshin", "afshin@mail.com", "(353) 22 87 8356"]
-  ]
+  ],
+search: true
 }).render(document.getElementById("wrapper"));
 
